@@ -2,6 +2,34 @@ import React, { Component } from 'react';
 import './../App.css';
 
 class FormContainer extends Component {
+
+  handleColorChange(event) {
+    // this.setState({filters["color"]: event.target.value});
+  }
+
+  handleSunroofChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handle4WDChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleLowMilesChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleWindowsChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleNavigationChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSeatsChange(event) {
+    this.setState({value: event.target.value});
+  }
   
   render() {
     return (
@@ -11,9 +39,11 @@ class FormContainer extends Component {
         <form>
           <label>
             Color
-            <input type="text" name="name" />
+            <input
+            name="color"
+            type="text"
+            onChange={this.handleColorChange} />
           </label>
-          <input type="submit" value="Submit" />
 
           <label>
           Sunroof
@@ -21,7 +51,7 @@ class FormContainer extends Component {
             name="hasSunroof"
             type="checkbox"
             // checked={this.state.hasSunroof}
-            onChange={this.handleInputChange} />
+            onChange={this.handleSunroofChange} />
           </label>
 
           <label>
@@ -30,7 +60,7 @@ class FormContainer extends Component {
             name="isFourWheelDrive"
             type="checkbox"
             // checked={this.state.isFourWheelDrive}
-            onChange={this.handleInputChange} />
+            onChange={this.handle4WDChange} />
           </label>
 
           <label>
@@ -39,7 +69,7 @@ class FormContainer extends Component {
             name="hasLowMiles"
             type="checkbox"
             // checked={this.state.hasLowMiles}
-            onChange={this.handleInputChange} />
+            onChange={this.handleLowMilesChange} />
           </label>
 
           <label>
@@ -48,7 +78,7 @@ class FormContainer extends Component {
             name="hasPowerWindows"
             type="checkbox"
             // checked={this.state.hasPowerWindows}
-            onChange={this.handleInputChange} />
+            onChange={this.handleWindowsChange} />
           </label>
           
           <label>
@@ -57,7 +87,7 @@ class FormContainer extends Component {
             name="hasNavigation"
             type="checkbox"
             // checked={this.state.hasNavigation}
-            onChange={this.handleInputChange} />
+            onChange={this.handleNavigationChange} />
           </label>
 
           <label>
@@ -66,11 +96,9 @@ class FormContainer extends Component {
             name="hasHeatedSeats"
             type="checkbox"
             // checked={this.state.hasHeatedSeats}
-            onChange={this.handleInputChange} />
+            onChange={this.handleSeatsChange} />
           </label>
         </form>
-
-        
 
       </div>
     );
